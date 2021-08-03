@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WYSIWYG Editor</title>
+    <script src="https://cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
+</head>
+<body>
+<div align="center"><h1>WYSIWYG EDITOR</h1></div>
+<div align="center" style="font-size:23pt;color:black;background-color:red">It is Compulsory to fill the editor box.</div>
+<div align="center">
+    <br>
+    <br>
+    <form action="change" method="post">
+    {% csrf_token %}
+        <font style="font-size:23pt;">Days --</font>
+    <select id="select-day" name="day" style="font-size:20pt;color:white;background-color:grey">
+  	  <option value="Day : Sunday">Sunday
+      <option value="Day : Monday">Monday
+  	  <option value="Day : Tuesday">Tuesday
+  	  <option value="Day : Wednesday">Wednesday
+  	  <option value="Day : Thursday">Thursday
+        <option value="Day : Friday">Friday
+  	  <option value="Day : Saturday">Saturday
+    </select>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <font style="font-size:23pt;">Topics --</font>
+    <select id="select-Topic" name="topic" style="font-size:20pt;color:white;background-color:grey">
+  	  <option value="Topic : India">India
+      <option value="Topic : Australia">Australia
+  	  <option value="Topic : US">US
+  	  <option value="Topic : UK">UK
+        <option value="Topic : Russia">Russia
+    </select>
+    <br>
+    <br>
+
+  <textarea name="text"></textarea>
+        <script>
+                        CKEDITOR.replace( 'text' );
+        </script>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary" style="font-size:20pt;color:white;background-color:blue">Submit</button>
+</div>
+</form>
+</body>
+</html>
